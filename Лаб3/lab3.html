@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+ <center><h1>Лабораторная работа №3</h1></center>
+ <p>Введите Фамилию 1-го работника <input id="last_name"></p>
+ <p>Введите дату приема на работу <input type="date" id="date1"></p>
+ <p>Введите Фамилию 2-го работника <input id="last_name2"></p>
+ <p>Введите дату приема на работу <input type="date" id="date2"></p>
+ <p>Введите Фамилию 3-го работника <input id="last_name3"></p>
+ <p>Введите дату приема на работу <input type="date" id="date3"></p>
+ <button id="stazh">Подтвердить</button>
+
+ <hr>
+ <div id="result"></div>
+<script type="text/javascript">
+
+ 
+function diffDates() {
+
+	var date = new Date();
+
+    var date11 = new Date (document.getElementById("date1").value);
+    
+    var date22 = new Date (document.getElementById("date2").value);
+    
+    var date33 = new Date (document.getElementById("date3").value);
+    
+	var a = (date - date11)/ (60 * 60 * 24 * 1000 * 364);
+	var b = (date - date22) / (60 * 60 * 24 * 1000 * 364);
+	var c = (date - date33) / (60 * 60 * 24 * 1000 * 364);
+
+	var sred = (a + b + c) / 3;
+    
+    sred = Math.floor(sred);
+
+	alert(sred + " years");
+	 
+};
+document.getElementById('stazh').addEventListener('click', diffDates);
+
+// function showworktime(obj) 
+//     {
+//       var dateNow = new Date();
+//       var dateWorkBegin = new Date(document.getElementById("firstDate").value);
+      
+//       var uptimeSec=(dateNow-dateWorkBegin)/1000;
+//       var uptimeMin=uptimeSec/60;
+//       var uptimeH=uptimeMin/60;
+//       var uptimeD=uptimeH/24;
+//       var uptimeY=uptimeD/364;
+        
+//       alert(uptimeSec + " s");
+//       alert(uptimeMin + " minutes");
+//       alert(uptimeH + " hours");
+//       alert(uptimeD + " days");
+//       alert(uptimeY + " years");
+//       alert(dateNow.getFullYear()-dateWorkBegin.getFullYear()-1 + " years");
+</script>
+</body>
+</html>
